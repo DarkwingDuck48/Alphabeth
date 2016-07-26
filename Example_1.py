@@ -11,9 +11,11 @@ e-d-c-b-a-b-c-d-e
 --------e--------
 
 Before i hardcode English alphabet in some variable, but now it looks like this:"""
+from Alphabet import English
+
 
 alphabeth = English()
-n = 5
+n = int(input("Give me a number - "))
 srting = []
 answer = []
 for i in range(0, n):
