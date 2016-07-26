@@ -11,10 +11,10 @@ uninumber(char) - возвращает номер Unicode выбранной б�
 """
 # Основной класс (__init__ возможно использовать для формирования собственного алфавита)
 class Alphabet:
-    def __init__(self, name, chars):
+    def __init__(self, name, chars, chartype):
         self.name = name
         self.chars = chars
-
+        self.chartype = chartype
     def upperсhars(self):
         listupper = []
         for char in self.chars:
@@ -39,10 +39,12 @@ class Russian(Alphabet):
     def __init__(self):
         self.name = 'Russian'
         self.chars = [chr(char) for char in range(256,10000) if 'а' <= chr(char) <= 'я' or 'А' <= chr(char) <= 'Я']
+        self.chartype = "Letters"
 class English(Alphabet):
     def __init__(self):
         self.name = "English"
         self.chars = [chr(char) for char in range(65,123) if 'a' <= chr(char) <= 'z' or 'A' <= chr(char) <= 'Z']
+        self.chartype = "Letters"
 class German(Alphabet):
     def __init__(self):
         self.name = "German"
@@ -50,4 +52,11 @@ class German(Alphabet):
                        85, 220, 86, 87, 88, 89, 90, 97, 228, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109,
                        110, 111, 246, 112, 113, 114, 115, 223, 116, 117, 252, 118, 119, 120, 121, 122]
         self.chars = [chr(char) for char in codenumbers]
+        self.chartype = "Letters"
+class Arabic(Alphabet):
+    def __init__(self):
+        self.name = "Arabic"
+        self.chartype = "Not letters"
+        codenumbers = [65166,]
+
 
