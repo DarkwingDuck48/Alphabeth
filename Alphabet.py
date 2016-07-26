@@ -10,7 +10,7 @@ lowerсhars() - возвращает лист из букв алфавита Т�
 uninumber(char) - возвращает номер Unicode выбранной буквы из алфавита.
 """
 # Основной класс (__init__ возможно использовать для формирования собственного алфавита)
-class Alphabeth:
+class Alphabet:
     def __init__(self, name, chars):
         self.name = name
         self.chars = chars
@@ -35,15 +35,15 @@ class Alphabeth:
         else:
             return 'Wrong Language'
 
-class Russian(Alphabeth):
+class Russian(Alphabet):
     def __init__(self):
         self.name = 'Russian'
         self.chars = [chr(char) for char in range(256,10000) if 'а' <= chr(char) <= 'я' or 'А' <= chr(char) <= 'Я']
-class English(Alphabeth):
+class English(Alphabet):
     def __init__(self):
         self.name = "English"
         self.chars = [chr(char) for char in range(65,123) if 'a' <= chr(char) <= 'z' or 'A' <= chr(char) <= 'Z']
-class German(Alphabeth):
+class German(Alphabet):
     def __init__(self):
         self.name = "German"
         codenumbers = [65, 196, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 214, 80, 81, 82, 83, 7838, 84,
