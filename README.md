@@ -7,8 +7,12 @@ This library will allow you to use in your programs and solutions list of letter
   1. Русский
   2. Английский
   3. Немецкий
+  4. Испанский
+  5. Итальянский
 
 # List of completed alphabets:
   1. Russian
   2. English
   3. German
+  4. Spanish
+  5. Italian
