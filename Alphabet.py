@@ -42,11 +42,15 @@ class Russian(Alphabet):
         codenumbers = [i for i in range(1040, 1047)] + [1025] + [i for i in range(1047, 1078)] + [1105] + \
                       [i for i in range(1078, 1104)]
         self.chars = [chr(char) for char in codenumbers]
+
+
 class English(Alphabet):
     def __init__(self):
         self.name = "English"
         self.chars = [chr(char) for char in range(65,123) if 'a' <= chr(char) <= 'z' or 'A' <= chr(char) <= 'Z']
         self.chartype = "Letters"
+
+
 class German(Alphabet):
     def __init__(self):
         self.name = "German"
@@ -55,6 +59,8 @@ class German(Alphabet):
                        110, 111, 246, 112, 113, 114, 115, 223, 116, 117, 252, 118, 119, 120, 121, 122]
         self.chars = [chr(char) for char in codenumbers]
         self.chartype = "Letters"
+
+
 class Spanish(Alphabet):
     def __init__(self):
         self.name = "Spanish"
@@ -62,6 +68,8 @@ class Spanish(Alphabet):
         codenumbers = [i for i in range(65, 79)]+[209]+[i for i in range(79, 91)]+[i for i in range(97, 111)]+[241] + \
             [i for i in range(111,123)]
         self.chars = [chr(char) for char in codenumbers]
+
+
 class Italian(Alphabet):
     def __init__(self):
         self.name = "Italian"
@@ -70,4 +78,12 @@ class Italian(Alphabet):
                       [i for i in range(108, 119)]+[224, 232, 233, 236, 237, 238, 242, 243, 249, 250]
         self.chars = [chr(char) for char in codenumbers]
 
+
+class Bulgarian(Alphabet):
+    def __init__(self):
+        self.name = "Bulgarian"
+        self.chartype = "Letter"
+        codenumbers = [i for i in range(1040, 1067)]+[1068, 1070, 1071]+[i for i in range(1072, 1099)]+ \
+                      [1100, 1102, 1103]
+        self.chars = [chr(char) for char in codenumbers]
 
