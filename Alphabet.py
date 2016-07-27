@@ -65,7 +65,7 @@ class Italian(Alphabet):
         self.name = "Italian"
         self.chartype = "Letter"
         codenumbers = [i for i in range(65, 74)]+[i for i in range(76, 87)]+[i for i in range(97, 106)] + \
-                      [i for i in range(108, 118)]
+                      [i for i in range(108, 118)]+[224, 232, 233, 236, 237, 238, 242, 243, 249, 250]
         self.chars = [chr(char) for char in codenumbers]
 
 
