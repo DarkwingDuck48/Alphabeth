@@ -87,3 +87,10 @@ class Bulgarian(Alphabet):
                       [1100, 1102, 1103]
         self.chars = [chr(char) for char in codenumbers]
 
+
+class Greek(Alphabet):
+    def __init__(self):
+        self.name = "Greek"
+        self.chartype = "Greek letter"
+        codenumbers = [i for i in range(913, 938)]+[i for i in range(945, 970)]
+        self.chars = [chr(char) for char in codenumbers]
