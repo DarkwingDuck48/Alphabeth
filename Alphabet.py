@@ -38,8 +38,10 @@ class Alphabet:
 class Russian(Alphabet):
     def __init__(self):
         self.name = 'Russian'
-        self.chars = [chr(char) for char in range(256,10000) if 'а' <= chr(char) <= 'я' or 'А' <= chr(char) <= 'Я']
         self.chartype = "Letters"
+        codenumbers = [i for i in range(1040, 1047)] + [1025] + [i for i in range(1047, 1078)] + [1105] + \
+                      [i for i in range(1078, 1104)]
+        self.chars = [chr(char) for char in codenumbers]
 class English(Alphabet):
     def __init__(self):
         self.name = "English"
