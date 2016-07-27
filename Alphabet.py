@@ -53,10 +53,19 @@ class German(Alphabet):
                        110, 111, 246, 112, 113, 114, 115, 223, 116, 117, 252, 118, 119, 120, 121, 122]
         self.chars = [chr(char) for char in codenumbers]
         self.chartype = "Letters"
-class Arabic(Alphabet):
+class Spanish(Alphabet):
     def __init__(self):
-        self.name = "Arabic"
-        self.chartype = "Not letters"
-        codenumbers = [65166,]
+        self.name = "Spanish"
+        self.chartype = "Letter"
+        codenumbers = [i for i in range(65, 79)]+[209]+[i for i in range(79, 91)]+[i for i in range(97, 111)]+[241] + \
+            [i for i in range(111,123)]
+        self.chars = [chr(char) for char in codenumbers]
+class Italian(Alphabet):
+    def __init__(self):
+        self.name = "Italian"
+        self.chartype = "Letter"
+        codenumbers = [i for i in range(65, 74)]+[i for i in range(76, 87)]+[i for i in range(97, 106)] + \
+                      [i for i in range(108, 118)]
+        self.chars = [chr(char) for char in codenumbers]
 
 
