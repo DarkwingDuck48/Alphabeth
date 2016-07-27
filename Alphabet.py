@@ -15,25 +15,41 @@ class Alphabet:
         self.name = name
         self.chars = chars
         self.chartype = chartype
+
     def upperсhars(self):
-        listupper = []
-        for char in self.chars:
-            if char.isupper():
-                listupper.append(char)
-        return listupper
+        if self.chartype == "Letters":
+            listupper = []
+            for char in self.chars:
+                if char.isupper():
+                    listupper.append(char)
+            return listupper
+        else:
+            return 'This alphabet don\'t have upper or lower chars'
 
     def lowerсhars(self):
-        listlower = []
-        for char in self.chars:
-            if char.islower():
-                listlower.append(char)
-        return listlower
+        if self.chartype == "Letters":
+            listlower = []
+            for char in self.chars:
+                if char.islower():
+                    listlower.append(char)
+            return listlower
+        else:
+            return 'This alphabet don\'t have upper or lower chars'
 
     def uninumber(self,char):
         if char in self.chars:
             return ord(char)
         else:
             return 'Wrong Language'
+
+
+class Avestan(Alphabet):
+    def __init__(self):
+        self.name = "Avestan"
+        self.chartype = "Not letter"
+        self.chars = [chr(char) for char in range(68352, 68406)]
+        self.special_symbols = [chr(char) for char in range(68409, 68415)]
+
 
 class Russian(Alphabet):
     def __init__(self):
@@ -94,3 +110,4 @@ class Greek(Alphabet):
         self.chartype = "Greek letter"
         codenumbers = [i for i in range(913, 938)]+[i for i in range(945, 970)]
         self.chars = [chr(char) for char in codenumbers]
+
