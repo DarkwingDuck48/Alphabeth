@@ -9,6 +9,7 @@ This library will allow you to use in your programs and solutions list of letter
   3. Немецкий
   4. Испанский
   5. Итальянский
+  6. Болгарский
 
 # List of completed alphabets:
   1. Russian
@@ -16,3 +17,4 @@ This library will allow you to use in your programs and solutions list of letter
   3. German
   4. Spanish
   5. Italian
+  6. Bulgarian
