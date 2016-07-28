@@ -10,13 +10,13 @@ lowerсhars() - возвращает лист из букв алфавита Т�
 uninumber(char) - возвращает номер Unicode выбранной буквы из алфавита.
 """
 # Основной класс (__init__ возможно использовать для формирования собственного алфавита)
-class Alphabet:
-    def __init__(self, name, chars, chartype, codenumbers):
+class Alphabet(object):
+    def __init__(self, name, chars, chartype, codenumbers, description):
         self.name = name
         self.chars = chars
         self.chartype = chartype
         self.codenumbers = codenumbers
-
+        self.description = description
     def upperсhars(self):
         if self.chartype == "Letters":
             listupper = []
@@ -50,6 +50,7 @@ class Avestan(Alphabet):
         self.chartype = "Not letter"
         self.chars = [chr(char) for char in range(68352, 68406)]
         self.special_symbols = [chr(char) for char in range(68409, 68415)]
+        self.description = "Авестийский алфавит служил для перезаписи Авесты — собрания священных текстов зороастрийцев. Эти книги были написаны на умершем, примерно, в V веке, авестийском языке. За основу алфавита было взято арамейское письмо, использовавшееся иранской шахской династией пехлеви. Состав алфавита изменялся в небольших пределах, в зависимости от конкретного переписчика. Старейшая сохранившаяся рукопись датируется XIII веком."
 
 
 class Belorussian(Alphabet):
@@ -62,6 +63,20 @@ class Belorussian(Alphabet):
                            [i for i in range(1078,1080)]+[1110]+[i for i in range(1081,1092)]+[1118]+\
                            [i for i in range(1092,1097)]+[i for i in range(1099,1104)]
         self.chars = [chr(char) for char in self.codenumbers]
+
+
+class Bashkir(Alphabet):
+    def __init__(self):
+        self.name = "Bashkir"
+        self.chartype = "Letters"
+        self.codenumbers = [i for i in range(1040,1044)]+[1170,1044,1176,1045,1025]+[i for i in range(1046,1051)]+[1184]\
+                           +[i for i in range(1051,1054)]+[1186,1054,1256]+[i for i in range(1055,1058)]\
+                           +[1194,1058,1059,1198,1060,1061,1210]+[i for i in range(1062,1070)]+[1240,1070,1071]\
+                           +[i for i in range(1072,1076)]+[1171,1076,1177,1077,1105]+[i for i in range(1078,1083)]\
+                           +[1185]+[i for i in range(1083,1086)]+[1187,1086,1257]+[i for i in range(1087,1090)]\
+                           +[1195,1090,1091,1199,1092,1093,1211]+[i for i in range(1094,1102)]+[1241,1102,1103]
+        self.chars = [chr(char) for char in self.codenumbers]
+
 class Russian(Alphabet):
     def __init__(self):
         self.name = 'Russian'
