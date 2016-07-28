@@ -11,9 +11,10 @@ This library will allow you to use in your programs and solutions list of letter
   5.  Итальянский
   6.  Болгарский
   7.  Греческий
-  8.  Авестийский  (отображение символов не поддерживается стандартными шрифтами)
+  8.  Авестийский  (не нашел шрифт для отображения)
   9.  Белорусский
   10. Башкирский
+  11. Тюркский древний рунический алфавит (не нашел шрифт для отображения)
 
 # List of completed alphabets:
   1.  Russian
@@ -23,6 +24,7 @@ This library will allow you to use in your programs and solutions list of letter
   5.  Italian
   6.  Bulgarian
   7.  Greek
-  8.  Avestan   (standart fonts can't show this alphabet)
+  8.  Avestan   (can't find font for this alphabet)
   9.  Belorussian
   10. Bashkir
+  11. Old turkic runic alphabet (can't find font for this alphabet)
