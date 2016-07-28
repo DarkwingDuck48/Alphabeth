@@ -37,11 +37,25 @@ class Alphabet(object):
         else:
             return 'This alphabet don\'t have upper or lower chars'
 
-    def uninumber(self,char):
+    def uninumber(self, char):
         if char in self.chars:
             return ord(char)
         else:
             return 'Wrong Language'
+
+    def description(self,lang,what):
+        if lang == "ru":
+            if what == "name":
+                return self.name["ru"]
+            elif what == "about":
+                return self.about["ru"]
+            elif what == "all":
+                return self.name["ru"],self.about["ru"]
+            else:
+                raise Exception("I don't understand what you want")
+        elif lang == "en":
+
+
 
 
 class Avestan(Alphabet):
@@ -50,7 +64,7 @@ class Avestan(Alphabet):
         self.chartype = "Not letter"
         self.chars = [chr(char) for char in range(68352, 68406)]
         self.special_symbols = [chr(char) for char in range(68409, 68415)]
-        self.description = "Авестийский алфавит служил для перезаписи Авесты — собрания священных текстов зороастрийцев. Эти книги были написаны на умершем, примерно, в V веке, авестийском языке. За основу алфавита было взято арамейское письмо, использовавшееся иранской шахской династией пехлеви. Состав алфавита изменялся в небольших пределах, в зависимости от конкретного переписчика. Старейшая сохранившаяся рукопись датируется XIII веком."
+        self.about = "Авестийский алфавит служил для перезаписи Авесты — собрания священных текстов зороастрийцев. Эти книги были написаны на умершем, примерно, в V веке, авестийском языке. За основу алфавита было взято арамейское письмо, использовавшееся иранской шахской династией пехлеви. Состав алфавита изменялся в небольших пределах, в зависимости от конкретного переписчика. Старейшая сохранившаяся рукопись датируется XIII веком."
 
 
 class Belorussian(Alphabet):
