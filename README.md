@@ -15,6 +15,7 @@ This library will allow you to use in your programs and solutions list of letter
   9.  Белорусский
   10. Башкирский
   11. Тюркский древний рунический алфавит (не нашел шрифт для отображения)
+  12. Глаголица (не нашел шрифт для отображения)
 
 # List of completed alphabets:
   1.  Russian
@@ -28,3 +29,4 @@ This library will allow you to use in your programs and solutions list of letter
   9.  Belorussian
   10. Bashkir
   11. Old turkic runic alphabet (can't find font for this alphabet)
+  12. Glagolitic (can't find font for this alphabet)
