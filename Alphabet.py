@@ -5,19 +5,33 @@
 Если вдруг Вы столкнетесь с задачей быстро сформировать лист букв, то можете ею воспользоваться.
 
 Методы:
-upperсhars() - возвращает лист из букв алфавита ТОЛЬКО в верхнем регистре.
-lowerсhars() - возвращает лист из букв алфавита ТОЛЬКО в нижнем регистре.
-uninumber(char) - возвращает номер Unicode выбранной буквы из алфавита.
+upperсhars()
+lowerсhars()
+uninumber(char)
 """
-# Основной класс (__init__ возможно использовать для формирования собственного алфавита)
+
+
 class Alphabet(object):
+
     def __init__(self, name, chars, chartype, codenumbers, description):
+        """
+
+        :param name: Название алфавита (на англ и русском)
+        :param chars: Список букв алфавита
+        :param chartype: Тип букв
+        :param codenumbers: Код букв алфавита
+        :param description: Описание (на англ и русском)
+        """
         self.name = name
         self.chars = chars
         self.chartype = chartype
         self.codenumbers = codenumbers
         self.description = description
     def upperсhars(self):
+        """
+
+        :return: Возвращает список из букв в верхнем регистре или исключение
+        """
         if self.chartype == "Letters":
             listupper = []
             for char in self.chars:
@@ -25,9 +39,13 @@ class Alphabet(object):
                     listupper.append(char)
             return listupper
         else:
-            return 'This alphabet don\'t have upper or lower chars'
+            raise Exception('This alphabet don\'t have upper chars')
 
     def lowerсhars(self):
+        """
+
+        :return: Возвращает список из букв в нижнем регистре или исключение
+        """
         if self.chartype == "Letters":
             listlower = []
             for char in self.chars:
@@ -35,15 +53,25 @@ class Alphabet(object):
                     listlower.append(char)
             return listlower
         else:
-            return 'This alphabet don\'t have upper or lower chars'
+            raise Exception ('This alphabet don\'t have lower chars')
 
     def uninumber(self, char):
+        """
+
+        :param char: Буква, номер которой ищем
+        :return: Если буква присутствует в алфавите возвращает код, иначе исключение
+        """
         if char in self.chars:
             return ord(char)
         else:
-            return 'Wrong Language'
+            raise Exception ('Wrong alphabet')
 
     def description(self,lang,what):
+        """
+        :param lang: на каком языке отображать информацию ('ru','en')
+        :param what: что отобразить(ключ к словарю) ('name','about','all')
+        :return: В зависимости от выбранных параметров возвращает информацию
+        """
         if lang == "ru":
             if what == "name":
                 return self.name["ru"]
@@ -54,17 +82,25 @@ class Alphabet(object):
             else:
                 raise Exception("I don't understand what you want")
         elif lang == "en":
+            if what == "name":
+                return self.name["en"]
+            elif what == "about":
+                return self.about["en"]
+            elif what == "all":
+                return self.name["en"], self.about["en"]
+            else:
+                raise Exception("I don't understand what you want")
 
 
 
 
 class Avestan(Alphabet):
     def __init__(self):
-        self.name = "Avestan"
+        self.name = {"en":"Avestan","ru":"Авестийский"}
         self.chartype = "Not letter"
         self.chars = [chr(char) for char in range(68352, 68406)]
         self.special_symbols = [chr(char) for char in range(68409, 68415)]
-        self.about = "Авестийский алфавит служил для перезаписи Авесты — собрания священных текстов зороастрийцев. Эти книги были написаны на умершем, примерно, в V веке, авестийском языке. За основу алфавита было взято арамейское письмо, использовавшееся иранской шахской династией пехлеви. Состав алфавита изменялся в небольших пределах, в зависимости от конкретного переписчика. Старейшая сохранившаяся рукопись датируется XIII веком."
+        self.about = {"ru" : "Авестийский алфавит служил для перезаписи Авесты — собрания священных текстов зороастрийцев. Эти книги были написаны на умершем, примерно, в V веке, авестийском языке. За основу алфавита было взято арамейское письмо, использовавшееся иранской шахской династией пехлеви. Состав алфавита изменялся в небольших пределах, в зависимости от конкретного переписчика. Старейшая сохранившаяся рукопись датируется XIII веком.","en" : "No desctiption"}
 
 
 class Belorussian(Alphabet):
